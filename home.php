@@ -21,5 +21,12 @@
 </head>
 <body>
     <?php include('header.php'); ?>
+    <form method="post" action="create_tweet.php">
+        <fieldset>
+            <label for="tweet">What's happening?</label><br>
+            <textarea name="body" cols="50" rows="4"></textarea><br>
+            <input type="submit" value="Tweet">
+        </fieldset>
+    </form>
 </body>
 </html>
