@@ -18,7 +18,8 @@
         foreach ($result as $entry) {
             $users_following[] = $entry['user'];
         }
-        $result = $db->tweets->find(array('authorId'=>array('$in'=>$users_following)));
+        $filter_options = ['sort' => ['created' => -1], 'limit' => 10];
+        $result = $db->tweets->find(array('authorId'=>array('$in'=>$users_following)), $filter_options);
         $recent_tweets = iterator_to_array($result);
 
         return $recent_tweets;
