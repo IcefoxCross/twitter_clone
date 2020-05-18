@@ -48,6 +48,8 @@
                 echo ' [<a href="profile.php?id=' . $user['_id'] . '">Visit Profile</a>]';
                 if (!in_array($user['_id'], $users_following)) {
                     echo ' [<a href="follow.php?id=' . $user['_id'] . '">Follow</a>]';
+                } else {
+                    echo ' [<a href="unfollow.php?id=' . $user['_id'] . '">Unfollow</a>]';
                 }
                 echo '<hr>';
             }
